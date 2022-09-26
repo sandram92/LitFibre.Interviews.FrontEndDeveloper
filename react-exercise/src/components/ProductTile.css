@@ -1,0 +1,14 @@
+.productTile {
+  width: 20rem;
+  height: min-content;
+  border: 1px solid black;
+  border-radius: 1.6rem;
+  box-shadow: 0.5rem 0.5rem 1rem #bbb;
+}
+
+.productTile > p {
+  font-weight: bold;
+}
+
+.productImage {
+}
