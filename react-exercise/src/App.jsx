@@ -63,7 +63,6 @@ import React, { useState, useEffect } from "react";
 const url = "data.json";
 
 const getProducts = async () => {
-  
   try {
     const { data } = await axios(url);
     return data;
@@ -73,6 +72,7 @@ const getProducts = async () => {
 };
 
 function App() {
+  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

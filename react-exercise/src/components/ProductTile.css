@@ -11,7 +11,6 @@
   justify-content: space-around;
   align-items: center;
 }
-
 .productTile:hover {
   transition: all 0.4s ease-in-out;
   transform: scale(1.08);
