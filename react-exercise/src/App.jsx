@@ -72,7 +72,6 @@ const getProducts = async () => {
 };
 
 function App() {
-  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
