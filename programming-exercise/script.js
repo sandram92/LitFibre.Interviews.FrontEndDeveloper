@@ -106,6 +106,8 @@ const promotions = [
 // loop over remaining items in basket and add the price
 
 const calculateBasket = (products) => {
+  
+  // WITH PROMOTION
 
   // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts];
 
@@ -133,45 +135,48 @@ const calculateBasket = (products) => {
   //     )
 
   //      const el1 =  prom.applicableFromBakery.filter(element => basValues.includes(element))
-  //      const el2 =  prom.applicableFromCafe.filter(element => basValues.includes(element))
-      
+  //      const el2 =  prom.applicableFromCafe.filter(element => basValues.includes(element)) 
   //   });
   // });
-
   // return { totalCalories, totalPrice };
 
-  // const bakeryCoffeeProducts = [...bakeryProducts, ...cafeProducts];
 
-  // const basket = bakeryCoffeeProducts.filter((product) => {
-  //   return products.includes(product.name);
-  // });
+  // USING FILTER
 
-  // let totalPrice = 0;
-  // let totalCalories = 0;
+  const bakeryCoffeeProducts = [...bakeryProducts, ...cafeProducts];
 
-  // basket.forEach((prod) => {
-  //   totalPrice += prod.unitPrice;
-  //   totalCalories += prod.calories;
-  // });
+  const basket = bakeryCoffeeProducts.filter((product) => {
+    return products.includes(product.name);
+  });
 
-  // return {
-  //   totalCalories,
-  //   totalPrice,
-  // };
+  let totalPrice = 0;
+  let totalCalories = 0;
 
-  const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts]
+  basket.forEach((prod) => {
+    totalPrice += prod.unitPrice;
+    totalCalories += prod.calories;
+  });
 
-   const basket = bakeryCaffeeProducts.reduce((acc, product) => {
+  return {
+    totalCalories,
+    totalPrice,
+  };
 
-    if(products.includes(product.name)){
-      acc.totalPrice += product.unitPrice
-      acc.totalCalories += product.calories
-    }
-    return acc
+  // USING REDUCE
 
-  },{ totalPrice:0, totalCalories:0 })
+  // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts]
 
-  console.log(basket)
+  //  const basket = bakeryCaffeeProducts.reduce((acc, product) => {
+
+  //   if(products.includes(product.name)){
+  //     acc.totalPrice += product.unitPrice
+  //     acc.totalCalories += product.calories
+  //   }
+  //   return acc
+
+  // },{ totalPrice:0, totalCalories:0 })
+
+  // console.log(basket)
 
   // JavaScript exercise
   // This function mysteriously got wiped from our online ordering system, and there's no history of it in source control...
