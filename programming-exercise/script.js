@@ -84,6 +84,13 @@ const promotions = [
     promotionPrice: 2.5,
   },
 ];
+
+//USING FILTER
+//1.merge both arrays
+//2.filter merged array - each itaration need to check if the item exist in pasted products
+//3.initilize totalPrice and totalCalories
+//4. add price to totalPrice and add callories to totalCalories
+
 // USING REDUCE
 // 1. merge both arrays
 // 2. loop over the data using reduce
@@ -92,21 +99,8 @@ const promotions = [
 // - if exists in past products we add to total price and to total callories
 // - if no return accumulator
 
-//USING FILTER
-//1.merge both arrays
-//2.filter merged array - each itaration need to check if the item exist in pasted products
-//3.initilize totalPrice and totalCalories
-//4. add price to totalPrice and add callories to totalCalories
-
-//PROMOTIONS
-// loop over promotions
-// check if promotion contains bakery and coffee from basket
-// if it does remove both items from basket array
-// add promotionPrice to total price
-// loop over remaining items in basket and add the price
-
 const calculateBasket = (products) => {
-  // USING FILTER
+  //FILTER
 
   const bakeryCoffeeProducts = [...bakeryProducts, ...cafeProducts];
 
@@ -127,7 +121,7 @@ const calculateBasket = (products) => {
     totalPrice,
   };
 
-  // USING REDUCE
+  // REDUCE 
 
   // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts]
 
@@ -145,6 +139,12 @@ const calculateBasket = (products) => {
   //PLEASE NOTE I HAVE TRIED TO TO DO THE EXTRA POINTS WITH PROMOTIONS - WITH NO LUCK UNFORTUNATELLY - please see the code below
   // WITH PROMOTION
 
+  // loop over promotions
+  // check if promotion contains bakery and coffee from basket
+  // if it does remove both items from basket array  ?
+  // add promotionPrice to total price
+  // loop over remaining items in basket and add the price
+
   // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts];
 
   // const basket = bakeryCaffeeProducts.filter((product) => {
@@ -160,18 +160,34 @@ const calculateBasket = (products) => {
 
   // basket.forEach((bas) => {
   //   // console.log(bas);
-
   //   const basValues = Object.values(bas);
   //   // console.log(basValues)
   //   promotions.forEach((prom) => {
-  //     // console.log(prom.applicableFromBakery)
+  //     console.log(prom.applicableFromBakery);
   //     // if (
   //     //   prom.applicableFromBakery.some((r) => basValues.indexOf(r) >= 0) ||
   //     //   prom.applicableFromCafe.some((r) => basValues.indexOf(r) >= 0)
   //     // )
 
-  //      const el1 =  prom.applicableFromBakery.filter(element => basValues.includes(element))
-  //      const el2 =  prom.applicableFromCafe.filter(element => basValues.includes(element))
+  //     const el1 = prom.applicableFromBakery.filter((element) =>
+  //       basValues.includes(element)
+  //     );
+  //     console.log(el1);
+  //     const el2 = prom.applicableFromCafe.filter((element) =>
+  //       basValues.includes(element)
+  //     );
+
+  //     if (el1 && el2) {
+  //       // remove element from basket and add prom Price
+  //       for (let i = 0; i < bas.length; i++) {
+  //         if (bas[i] === el1 && el2) {
+  //           bas.splice(i, 1);
+  //         }
+  //       }
+  //       totalPrice += prom.promotionPrice;
+  //     } else {
+  //       totalPrice += bas.unitPrice;
+  //     }
   //   });
   // });
   // return { totalCalories, totalPrice };
