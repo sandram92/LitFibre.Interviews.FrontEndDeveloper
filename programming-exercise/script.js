@@ -85,15 +85,15 @@ const promotions = [
   },
 ];
 // USING REDUCE
-// 1.merge both arrays
+// 1. merge both arrays
 // 2. loop over the data using reduce
 // 3. initilize reduce with objects with totalPrice and totalCalories
-// 4.each itaration need to check if the item exist in pasted products
+// 4. each itaration need to check if the item exist in pasted products
 // - if exists in past products we add to total price and to total callories
 // - if no return accumulator
 
 //USING FILTER
-//1. merge both arrays
+//1.merge both arrays
 //2.filter merged array - each itaration need to check if the item exist in pasted products
 //3.initilize totalPrice and totalCalories
 //4. add price to totalPrice and add callories to totalCalories
@@ -106,41 +106,6 @@ const promotions = [
 // loop over remaining items in basket and add the price
 
 const calculateBasket = (products) => {
-  
-  // WITH PROMOTION
-
-  // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts];
-
-  // const basket = bakeryCaffeeProducts.filter((product) => {
-  //   return products.includes(product.name);
-  // });
-
-  // let totalCalories = basket.reduce((acc, product) => {
-  //   acc += product.calories;
-  //   return acc;
-  // }, 0);
-
-  // let totalPrice = 0;
-
-  // basket.forEach((bas) => {
-  //   console.log(bas);
-
-  //   const basValues = Object.values(bas);
-  //   console.log(basValues)
-  //   promotions.forEach((prom) => {
-  //     console.log(prom.applicableFromBakery)
-  //     if (
-  //       prom.applicableFromBakery.some((r) => basValues.indexOf(r) >= 0) ||
-  //       prom.applicableFromCafe.some((r) => basValues.indexOf(r) >= 0)
-  //     )
-
-  //      const el1 =  prom.applicableFromBakery.filter(element => basValues.includes(element))
-  //      const el2 =  prom.applicableFromCafe.filter(element => basValues.includes(element)) 
-  //   });
-  // });
-  // return { totalCalories, totalPrice };
-
-
   // USING FILTER
 
   const bakeryCoffeeProducts = [...bakeryProducts, ...cafeProducts];
@@ -166,7 +131,7 @@ const calculateBasket = (products) => {
 
   // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts]
 
-  //  const basket = bakeryCaffeeProducts.reduce((acc, product) => {
+  // const basket = bakeryCaffeeProducts.reduce((acc, product) => {
 
   //   if(products.includes(product.name)){
   //     acc.totalPrice += product.unitPrice
@@ -175,8 +140,41 @@ const calculateBasket = (products) => {
   //   return acc
 
   // },{ totalPrice:0, totalCalories:0 })
-
   // console.log(basket)
+
+  //PLEASE NOTE I HAVE TRIED TO TO DO THE EXTRA POINTS WITH PROMOTIONS - WITH NO LUCK UNFORTUNATELLY - please see the code below
+  // WITH PROMOTION
+
+  // const bakeryCaffeeProducts = [...bakeryProducts, ...cafeProducts];
+
+  // const basket = bakeryCaffeeProducts.filter((product) => {
+  //   return products.includes(product.name);
+  // });
+
+  // let totalCalories = basket.reduce((acc, product) => {
+  //   acc += product.calories;
+  //   return acc;
+  // }, 0);
+
+  // let totalPrice = 0;
+
+  // basket.forEach((bas) => {
+  //   // console.log(bas);
+
+  //   const basValues = Object.values(bas);
+  //   // console.log(basValues)
+  //   promotions.forEach((prom) => {
+  //     // console.log(prom.applicableFromBakery)
+  //     // if (
+  //     //   prom.applicableFromBakery.some((r) => basValues.indexOf(r) >= 0) ||
+  //     //   prom.applicableFromCafe.some((r) => basValues.indexOf(r) >= 0)
+  //     // )
+
+  //      const el1 =  prom.applicableFromBakery.filter(element => basValues.includes(element))
+  //      const el2 =  prom.applicableFromCafe.filter(element => basValues.includes(element))
+  //   });
+  // });
+  // return { totalCalories, totalPrice };
 
   // JavaScript exercise
   // This function mysteriously got wiped from our online ordering system, and there's no history of it in source control...
@@ -222,4 +220,6 @@ console.log(
   ])
 ); // with promotion - 11.2
 
-console.log(calculateBasket(["sponge", "tea", "savoury muffin", "coffee", "sponge"])); // with promotion -  7.8
+console.log(
+  calculateBasket(["sponge", "tea", "savoury muffin", "coffee", "sponge"])
+); // with promotion -  7.8
