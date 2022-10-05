@@ -1,5 +1,6 @@
 .productTile {
-  width: 22rem;
+  /* width: 22rem; */
+  flex-basis: 22rem;
   height: min-content;
   min-height: 30rem;
   border: 1px solid black;
